@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=10">
+    <title>Анализ отзывов</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="header">
+            <p style="font-size: 30px; text-align: center; margin: 0; padding: 40px;">Это простая интерактивная демонстрация работы алгоритма анализа тональности отзывов на фильмы</p>
+        </header>
+
+        <div class="container clearfix">
+            <main class="content">
+                <form style="text-align: center;" action="{{ url_for('index_page') }}" method=post>
+                    <dl>
+                        <dt>ВВЕДИТЕ ОТЗЫВ (англ.)<br>
+                        <dd><textarea name=text rows=15 cols=80>{{ text }}</textarea>
+                        <dd><input type=submit value="Оценить тональность">
+                    </dl>
+                </form>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p style="font-size: 30px; margin: 0; padding: 75px; text-align: center; background: {{footer_color}}; ">{{ prediction_message }}</p>
+        </footer>
+    </div>  
+</body>
+</html>
